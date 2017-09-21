@@ -1,46 +1,55 @@
+import org.junit.Before;
 import org.junit.Test;
 import org.ulpgc.FizzBuzz;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class FizzBuzzTest {
+    private FizzBuzz fizzBuzz;
+
+    @Before
+    public void setUp() throws Exception {
+        fizzBuzz=new FizzBuzz();
+    }
+
     @Test
     public void given_1_should_return_1() {
-        assertEquals("1", new FizzBuzz().get(1));
+        assertThat(fizzBuzz.get(1), is("1"));
     }
 
     @Test
     public void given_2_should_return_2() {
-        assertEquals("2", new FizzBuzz().get(2));
+        assertThat(fizzBuzz.get(2), is("2"));
     }
 
     @Test
     public void given_3_should_return_3() {
-        assertEquals("Fizz", new FizzBuzz().get(3));
+        assertThat(fizzBuzz.get(3), is("Fizz"));
     }
 
     @Test
     public void given_5_should_return_5() {
-        assertEquals("Buzz", new FizzBuzz().get(5));
+        assertThat(fizzBuzz.get(5), is("Buzz"));
     }
 
     @Test
     public void given_6_should_return_6() {
-        assertEquals("Fizz", new FizzBuzz().get(6));
+        assertThat(fizzBuzz.get(6), is("Fizz"));
     }
 
     @Test
     public void given_10_should_return_10() {
-        assertEquals("Buzz", new FizzBuzz().get(10));
+        assertThat(fizzBuzz.get(10), is("Buzz"));
     }
 
     @Test
     public void given_15_should_return_15() {
-        assertEquals("org.ulpgc.FizzBuzz", new FizzBuzz().get(15));
+        assertThat(fizzBuzz.get(15), is("FizzBuzz"));
     }
 
     @Test
     public void given_30_should_return_30() {
-        assertEquals("org.ulpgc.FizzBuzz", new FizzBuzz().get(30));
+        assertThat(fizzBuzz.get(30), is("FizzBuzz"));
     }
 }
