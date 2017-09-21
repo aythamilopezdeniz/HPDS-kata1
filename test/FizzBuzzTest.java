@@ -1,5 +1,5 @@
-import org.junit.Assert;
 import org.junit.Test;
+import org.ulpgc.FizzBuzz;
 
 import static org.junit.Assert.assertEquals;
 
@@ -36,20 +36,11 @@ public class FizzBuzzTest {
 
     @Test
     public void given_15_should_return_15() {
-        assertEquals("FizzBuzz", new FizzBuzz().get(15));
+        assertEquals("org.ulpgc.FizzBuzz", new FizzBuzz().get(15));
     }
 
     @Test
     public void given_30_should_return_30() {
-        assertEquals("FizzBuzz", new FizzBuzz().get(30));
-    }
-
-    public class FizzBuzz {
-        public String get(int position) {
-            if(position%15==0)return "FizzBuzz";
-            if(position%5==0)return "Buzz";
-            if(position%3==0)return "Fizz";
-            return String.valueOf(position);
-        }
+        assertEquals("org.ulpgc.FizzBuzz", new FizzBuzz().get(30));
     }
 }
